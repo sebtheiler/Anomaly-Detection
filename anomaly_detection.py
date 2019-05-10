@@ -1,15 +1,3 @@
-"""
-Detecting Anomalies in the MNIST Fashion Dataset \n
-
-Attempts to represent and reconstruct the MNIST Fashion dataset
-with an autoencoder, and then finds which images were represented
-worst, and which images were represented best. \n
-
-Dark images are often represented the best and bright black and white
-stripped images with abnormal shapes are represented the worst. \n
-
-Could be used with other data to find statistical anomalies. \n
-"""
 from keras.datasets import fashion_mnist
 from keras.models import Model, load_model
 from keras.layers import Input, Conv2D, Dense, MaxPooling2D, Conv2DTranspose, Lambda, Reshape
