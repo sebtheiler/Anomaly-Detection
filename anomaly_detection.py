@@ -19,11 +19,14 @@ print(x_train, x_train.shape,y_train)
 
 fashion_labels = ['T-Shirt', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle Boot']
 
+
 epochs = 50
 batch_size = 64
 steps_per_epoch = None
 save_model = False
-load_from = 'fashion_autoencoder.hdf5' # File to load model from.  None for new model.
+save_to = 'fashion_autoencoder.hdf5'
+load_from = None # File to load model from.  None for new model.
+
 
 if load_from == None:
     conv_input = Input(shape=(None, 28, 28))
@@ -69,7 +72,7 @@ model.fit(x=x_train,
           batch_size=batch_size)
 
 if save_model:
-    model.save('fashion_autoencoder.hdf5')
+    model.save(save_to)
 
 originals = []
 encodeds = []
